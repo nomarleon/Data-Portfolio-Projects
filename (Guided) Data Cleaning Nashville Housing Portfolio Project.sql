@@ -1,10 +1,10 @@
---Cleaning Data in SQL Queries
+--Retrieve all the data from the NashvilleHousing table to examine it
 
 SELECT *
 FROM PortfolioProject..NashvilleHousing
 
 
---Standardize Date Format
+--Standardize the date format in the SaleDate column
 
 SELECT SaleDateConverted, CONVERT(Date,SaleDate)
 FROM PortfolioProject..NashvilleHousing
@@ -19,7 +19,7 @@ Update NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
 
 
---Populate Property Address Data
+--Populate missing property addresses by matching the ParcelID and joining on itself
 
 SELECT *
 FROM PortfolioProject..NashvilleHousing
@@ -77,12 +77,13 @@ SELECT OwnerAddress
 FROM PortfolioProject..NashvilleHousing
 
 
+--Split the OwnerAddress column into separate columns for address, city, and state
+
 SELECT 
 PARSENAME(REPLACE(OwnerAddress,',','.'), 3)
 , PARSENAME(REPLACE(OwnerAddress,',','.'), 2)
 , PARSENAME(REPLACE(OwnerAddress,',','.'), 1)
 FROM PortfolioProject..NashvilleHousing
-
 
 
 ALTER TABLE NashvilleHousing
@@ -106,7 +107,7 @@ SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress,',','.'), 1)
 
 
 
---Change Y and N to Yes and No in "Sold as Vacant" field
+--Change 'Y' and 'N' to 'Yes' and 'No' in the SoldAsVacant field
 
 SELECT DISTINCT (SoldAsVacant), COUNT(SoldAsVacant)
 FROM PortfolioProject..NashvilleHousing
@@ -130,7 +131,7 @@ END
 
 
 
---Remove Duplicates
+--Remove duplicate rows in the table
 
 WITH RowNumCTE AS(
 SELECT *,
@@ -147,7 +148,7 @@ WHERE row_num > 1
 ORDER BY PropertyAddress
 
 
---Delete Unused Columns
+--Delete unused columns from the table
 
 SELECT *
 FROM PortfolioProject..NashvilleHousing
