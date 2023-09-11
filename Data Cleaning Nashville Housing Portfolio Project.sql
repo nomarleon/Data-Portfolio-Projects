@@ -5,6 +5,7 @@ Data Completeness Improvement:
 Metric: Improved Data Completeness
 Explanation: This metric shows how much better we made our data by filling in missing information.
 Calculation: Calculate the percentage reduction in missing data values in the entire dataset after cleaning compared to before cleaning.
+
 Duplicate Reduction Efficiency:
 
 Metric: Fewer Duplicate Records
