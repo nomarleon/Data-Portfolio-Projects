@@ -1,3 +1,19 @@
+Metrics:
+
+Data Range Analysis:
+
+Metric: Time Period Analyzed
+Explanation: This metric helps us understand the timeframe of our data analysis.
+Calculation: Determine the earliest and latest dates available in the CovidDeaths and CovidVaccinations tables to establish the time range of your data.
+
+COVID Impact in the United States:
+
+Metric: Likelihood and Population Infected
+Explanation: This metric focuses on the impact of COVID-19 in the United States.
+Calculation: Calculate the likelihood of dying if contracting COVID-19 in the United States and the percentage of the population that has been infected with COVID-19.
+
+Code:
+
 --Retrieve the earliest and latest date available in the CovidDeaths and CovidVaccinations table
 
 SELECT MIN(date) AS Earlier
