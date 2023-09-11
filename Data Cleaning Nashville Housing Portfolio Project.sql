@@ -1,3 +1,19 @@
+Metrics:
+
+Data Completeness Improvement:
+
+Metric: Improved Data Completeness
+Explanation: This metric shows how much better we made our data by filling in missing information.
+Calculation: Calculate the percentage reduction in missing data values in the entire dataset after cleaning compared to before cleaning.
+Duplicate Reduction Efficiency:
+
+Metric: Fewer Duplicate Records
+Explanation: This metric measures how well we removed duplicate entries from our data to ensure accuracy.
+Calculation: Calculate the percentage reduction in duplicate records in the entire dataset after removing duplicates compared to before removal.
+Standardization Success Rate:
+
+Code:
+
 --Retrieve all the data from the NashvilleHousing table to examine it
 
 SELECT *
